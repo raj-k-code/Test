@@ -1,0 +1,25 @@
+<!-- <div *ngFor=""> -->
+<countdown [(ngModel)]="countDown" [config]="{leftTime: countDown}"></countdown>
+<button (click)="toTimestamp('04/10/2022 18')">click</button>
+<!-- </div> -->
+<!-- <h1>{{countDown}}</h1> -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Sno.</th>
+      <th>Product Name</th>
+      <th>Start Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of dataList; index as i">
+      <td>{{i+1}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.startDate}}</td>
+       <td><countdown [(ngModel)]="countDown" [config]="{leftTime: countDown}"></countdown></td>
+       <td>
+        <button (click)="toTimestamp(data.startDate)">click</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

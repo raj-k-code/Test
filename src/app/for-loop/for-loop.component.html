@@ -1,0 +1,22 @@
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>User Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Mobile</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList; index as i">
+      <th>{{i+1}}</th>
+      <th>{{user.id}}</th>
+      <th>{{user.name}}</th>
+      <th>{{user.age}}</th>
+      <th>{{user.mobile}}</th>
+    </tr>
+  </tbody>
+</table>
+

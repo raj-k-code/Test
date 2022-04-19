@@ -1,0 +1,31 @@
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sno.</th>
+        <th>Product Name</th>
+        <th>Start Time</th>
+        <th>Product Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataList; index as i">
+        <td>{{i+1}}</td>
+        <td>{{data.name}}</td>
+        <td >{{data.startDate}}</td>
+        <!-- <td *ngIf="helo() <= data.startDate">{{helo()}}</td> -->
+
+        <td *ngIf="beforeStarting(data.startDate); else elseBlock1" ><p>bid will start on  {{data.startDate}}</p></td>
+
+        <ng-template #elseBlock1>
+            <td *ngIf="afterStarting(data.startDate,data.endDate); else elseBlock2" ><p>bid till open {{data.endDate}}</p></td>
+        </ng-template>
+
+        <ng-template #elseBlock2>
+          <td><p>bid closed</p></td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- raj -->
